@@ -1,11 +1,10 @@
 import "./App.css";
 import {} from "semantic-ui-react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import StSellerHeader from "./component/StudySellerHeader"
-import Board from "./component/mainBoard";
-import Menu from "./component/mainMenu";
 import {} from "semantic-ui-react";
 import MainPage from "./component/mainPage";
+import Login from "./component/Login"
+import SignUp from "./component/signup"
 
 function App() {
   return (
@@ -13,8 +12,11 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/signup" element={<SignUp/>} />
         </Routes>
       </div>
+      
     </BrowserRouter>
 
   );

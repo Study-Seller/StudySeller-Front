@@ -3,7 +3,7 @@ import { Image, Menu, Input, Segment,
                          Grid,
                          Header,
                          Icon,
-                         List, Button
+                         List, Button, Dropdown
                         } from 'semantic-ui-react'
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -18,19 +18,32 @@ const App = () => {
 
   return (
     <Segment style={{padding: 0}}>
-      <Menu style={{ backgroundColor: 'transparent' }} stackable inverted size='massive' fixed='top'  >
+      <Menu style={{ backgroundColor: 'transparent' ,paddingTop : '3px'}} stackable inverted size='massive' fixed='top'  >
         <Menu.Item as={Link} to='/' style={{fontSize: '20px', color: 'grey'}}
  >
          StudySeller
         </Menu.Item>
-        <Menu.Item
+        <Dropdown item text='Cateories'  
         style={{  fontSize: '20px', color: 'grey'}}
-          as={Link}
-          to='/'
-          name='closest'
-          active={activeItem === 'closest'}
-          onClick={handleItemClick}
-        />
+       
+        active={activeItem === 'mostComments'}
+          onClick={handleItemClick}>
+          <Dropdown.Menu>
+            <Dropdown.Header>Elementary School</Dropdown.Header>
+            <Dropdown.Item>Small</Dropdown.Item>
+            <Dropdown.Item>Medium</Dropdown.Item>
+            <Dropdown.Item>Large</Dropdown.Item>
+            <Dropdown.Header>Middle School</Dropdown.Header>
+            <Dropdown.Item>Small</Dropdown.Item>
+            <Dropdown.Item>Medium</Dropdown.Item>
+            <Dropdown.Item>Large</Dropdown.Item>
+            <Dropdown.Header>High School</Dropdown.Header>
+            <Dropdown.Item>Small</Dropdown.Item>
+            <Dropdown.Item>Medium</Dropdown.Item>
+            <Dropdown.Item>Large</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+
         <Menu.Item
         style={{  fontSize: '20px', color: 'grey'}}
           as={Link}
@@ -55,10 +68,11 @@ const App = () => {
             style={{fontSize: '20px', color: 'grey'}}
             name='signup'
             active={activeItem === 'signip'}
-            onClick={handleItemClick}>
+            onClick={handleItemClick}
+            href='/login'>
             Sign In
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item href='/signup'>
             <Button className="my-button">Sign Up!</Button>
           </Menu.Item>
          </Menu.Menu>
