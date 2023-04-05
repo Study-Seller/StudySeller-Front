@@ -2,9 +2,10 @@ import "./App.css";
 import {} from "semantic-ui-react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {} from "semantic-ui-react";
-import MainPage from "./component/mainPage";
-import Login from "./component/Login"
-import SignUp from "./component/signup"
+import MainPage from "./components/mainPage";
+import Login from "./components/Login"
+import SignUp from "./components/signup"
+import WritePage from "./components/writePage"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<SignUp/>} />
+          <Route path="/document" element={<WritePage/>} />
         </Routes>
       </div>
       

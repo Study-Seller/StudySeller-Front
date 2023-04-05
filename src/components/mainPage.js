@@ -47,8 +47,8 @@ const App = () => {
         <Menu.Item
         style={{  fontSize: '20px', color: 'grey'}}
           as={Link}
-          to='/'
-          name='mostComments'
+          to='/document'
+          name='Write'
           active={activeItem === 'mostComments'}
           onClick={handleItemClick}
         />
